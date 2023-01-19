@@ -4,17 +4,5 @@
     "**/assets/icons/*.svg": [
       "@parcel/transformer-svg-react"
     ]
-  },
-  "targets": {
-    "modern": {
-      "engines": {
-        "browsers": "Chrome 62"
-      }
-    },
-    "legacy": {
-      "engines": {
-        "browsers": "> 0.5%, last 2 versions, not dead"
-      }
-    }
   }
 }
