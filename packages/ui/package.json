@@ -79,7 +79,7 @@
   "targets": {
     "default": {
       "engines": {
-        "browsers": "defaults"
+        "browsers": "Chrome 80"
       }
     }
   },
