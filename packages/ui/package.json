@@ -83,6 +83,7 @@
       }
     }
   },
+  "browserslist": ">= 0.04% and not dead",
   "alias": {
     "@/*": "./src/$1"
   },
