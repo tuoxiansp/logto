@@ -10,14 +10,21 @@ import { DeletionError } from '#src/errors/SlonikError/index.js';
 
 const { table, fields } = convertToIdentifiers(Connectors);
 
-export const findAllConnectors = async () =>
-  manyRows(
+export const findAllConnectors = async () => {
+  console.log(sql`
+    select ${sql.join(Object.values(fields), sql`, `)}
+    from ${table}
+    order by ${fields.id} asc
+  `);
+
+  return manyRows(
     envSet.pool.query<Connector>(sql`
       select ${sql.join(Object.values(fields), sql`, `)}
       from ${table}
       order by ${fields.id} asc
     `)
   );
+};
 
 export const findConnectorById = async (id: string) =>
   envSet.pool.one<Connector>(sql`
