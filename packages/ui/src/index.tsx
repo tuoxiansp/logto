@@ -1,3 +1,5 @@
+import 'core-js/actual';
+
 import { createRoot } from 'react-dom/client';
 import ReactModal from 'react-modal';
 
