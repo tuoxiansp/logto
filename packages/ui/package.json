@@ -83,7 +83,7 @@
       }
     }
   },
-  "browserslist": ">= 0.04% and not dead",
+  "browserslist": ">= 0.5%, last 2 versions, not dead, chrome 60",
   "alias": {
     "@/*": "./src/$1"
   },
