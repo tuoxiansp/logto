@@ -129,7 +129,7 @@ export const addConnectors = async (instancePath: string, packageNames: string[]
       .map((name) => normalizePackageName(name))
       .map(async (packageName) => {
         const run = async () => {
-          const { stdout } = await execPromise(`npm pack ${packageName}@1.0.0-beta.17 --json`, {
+          const { stdout } = await execPromise(`npm pack ${packageName}@1.0.0-beta.16 --json`, {
             cwd,
           });
           const result = npmPackResultGuard.parse(JSON.parse(stdout));
