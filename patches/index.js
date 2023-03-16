@@ -1,4 +1,4 @@
-import { ConnectorConfigFormItemType, ConnectorType, validateConfig, ConnectorError, ConnectorErrorCodes, parseJson } from '@logto/connector-kit';
+import { ConnectorType, validateConfig, ConnectorError, ConnectorErrorCodes, parseJson } from '@logto/connector-kit';
 import { got, HTTPError } from 'got';
 import { createHmac } from 'crypto';
 import { z } from 'zod';
@@ -54,62 +54,7 @@ const defaultMetadata = {
         ko: 'Aliyun는 온라인 비지니스를 위해 클라우딩 컴퓨팅 서비스를 제공합니다.',
     },
     readme: './README.md',
-    formItems: [
-        {
-            key: 'accessKeyId',
-            label: 'Access Key ID',
-            type: ConnectorConfigFormItemType.Text,
-            required: true,
-            placeholder: '<access-key-id>',
-        },
-        {
-            key: 'accessKeySecret',
-            label: 'Access Key Secret',
-            type: ConnectorConfigFormItemType.Text,
-            required: true,
-            placeholder: '<access-key-secret>',
-        },
-        {
-            key: 'signName',
-            label: 'Signature Name',
-            type: ConnectorConfigFormItemType.Text,
-            required: true,
-            placeholder: '<signature-name>',
-        },
-        {
-            key: 'templates',
-            label: 'Templates',
-            type: ConnectorConfigFormItemType.Json,
-            required: true,
-            defaultValue: [
-                {
-                    usageType: 'SignIn',
-                    templateCode: '<template-code>',
-                    intlTemplateCode: '<template-code>',
-                },
-                {
-                    usageType: 'Register',
-                    templateCode: '<template-code>',
-                    intlTemplateCode: '<template-code>',
-                },
-                {
-                    usageType: 'ForgotPassword',
-                    templateCode: '<template-code>',
-                    intlTemplateCode: '<template-code>',
-                },
-                {
-                    usageType: 'Generic',
-                    templateCode: '<template-code>',
-                    intlTemplateCode: '<template-code>',
-                },
-                {
-                    usageType: 'Test',
-                    templateCode: '<template-code>',
-                    intlTemplateCode: '<template-code>',
-                },
-            ],
-        },
-    ],
+    configTemplate: './docs/config-template.json',
 };
 
 // Aliyun has special escape rules.
