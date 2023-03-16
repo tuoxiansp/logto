@@ -21,7 +21,7 @@ RUN pnpm -r build
 RUN pnpm cli connector add --official -p .
 
 # Patch aliyun-connector-sms
-COPY patches ./packages/core/connectors/@logto-connector-aliyun-sms/lib
+COPY patches/index.js ./packages/core/connectors/@logto-connector-aliyun-sms/lib
 
 # Prune dependencies for production
 RUN rm -rf node_modules packages/**/node_modules
